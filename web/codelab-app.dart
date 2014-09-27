@@ -58,4 +58,10 @@ class CodelabApp extends PolymerElement {
       cards[i].style.fontSize = "${fontSize}px";
     }
   }
+
+  reset() {
+    fontSize = 14;
+    fadeSelected = false;
+    $['toast'].show();
+  }
 }

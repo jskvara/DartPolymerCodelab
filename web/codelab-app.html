@@ -39,6 +39,14 @@
             <paper-slider value="{{fontSize}}" max="32" editable></paper-slider>
           </div>
         </core-item>
+        
+        <core-item>
+          <paper-button raisedButton class="colored" label="reset"
+                        on-click="{{reset}}"></paper-button>
+        </core-item>
+        
+        <paper-toast id="toast" class="capsule" text="Settings have been reset!"
+               duration="800"></paper-toast>
       </core-header-panel>
 
       <core-header-panel main>
