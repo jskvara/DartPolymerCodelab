@@ -3,17 +3,25 @@
 <link rel="import" href="packages/core_elements/core_drawer_panel.html">
 <link rel="import" href="packages/core_elements/core_header_panel.html">
 <link rel="import" href="packages/core_elements/core_toolbar.html">
+<link rel="import" href="packages/core_elements/core_icons.html">
+<link rel="import" href="packages/paper_elements/paper_icon_button.html">
 
 <polymer-element name="codelab-app">
   <template>
 
-    <core-drawer-panel responsiveWidth="600px">
+    <core-drawer-panel responsiveWidth="600px" id="drawerPanel">
       <core-header-panel drawer>
         <core-toolbar>Menu</core-toolbar>
       </core-header-panel>
 
       <core-header-panel main>
-        <core-toolbar>My Notes</core-toolbar>
+        <core-toolbar>
+          My Notes
+          <paper-icon-button icon="menu"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+          <paper-icon-button icon="more-vert"></paper-icon-button>
+        </core-toolbar>
+
       </core-header-panel>
     </core-drawer-panel>
 
