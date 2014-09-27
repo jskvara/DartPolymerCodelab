@@ -40,4 +40,13 @@ class CodelabApp extends PolymerElement {
       $['newNoteInput'].value = null;
     }
   }
+  
+  delete() {
+//    (note) => !note.done
+//    
+//    function(note) {
+//      return !note.done;
+//    }
+    data = data.where((note) => !note.done).toList();
+  }
 }
