@@ -18,6 +18,8 @@ class CodelabApp extends PolymerElement {
 
   @observable bool fadeSelected = false;
 
+  @observable var fontSize = 14;
+
   CodelabApp.created() : super.created() {
   }
   
@@ -48,5 +50,12 @@ class CodelabApp extends PolymerElement {
 //      return !note.done;
 //    }
     data = data.where((note) => !note.done).toList();
+  }
+  
+  fontSizeChanged() {
+    var cards = shadowRoot.querySelectorAll('.card');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.fontSize = "${fontSize}px";
+    }
   }
 }
