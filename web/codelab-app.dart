@@ -1,4 +1,3 @@
-//import 'dart:convert';
 import 'package:polymer/polymer.dart';
 
 @CustomTag('codelab-app')

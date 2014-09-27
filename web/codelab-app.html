@@ -1,8 +1,22 @@
 <link rel="import" href="packages/polymer/polymer.html">
 
+<link rel="import" href="packages/core_elements/core_drawer_panel.html">
+<link rel="import" href="packages/core_elements/core_header_panel.html">
+<link rel="import" href="packages/core_elements/core_toolbar.html">
+
 <polymer-element name="codelab-app">
   <template>
-    Hello Polymer!
+
+    <core-drawer-panel responsiveWidth="600px">
+      <core-header-panel drawer>
+        <core-toolbar>Menu</core-toolbar>
+      </core-header-panel>
+
+      <core-header-panel main>
+        <core-toolbar>My Notes</core-toolbar>
+      </core-header-panel>
+    </core-drawer-panel>
+
     <link rel="stylesheet" href="styles.css">
   </template>
   <script type="application/dart" src="codelab-app.dart">
