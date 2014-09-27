@@ -16,6 +16,8 @@ class CodelabApp extends PolymerElement {
   
   @observable List data = toObservable([]);
 
+  @observable bool fadeSelected = false;
+
   CodelabApp.created() : super.created() {
   }
   
