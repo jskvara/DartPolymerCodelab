@@ -5,6 +5,9 @@
 <link rel="import" href="packages/core_elements/core_toolbar.html">
 <link rel="import" href="packages/core_elements/core_icons.html">
 <link rel="import" href="packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="packages/paper_elements/paper_fab.html">
+<link rel="import" href="packages/paper_elements/paper_input.html">
+<link rel="import" href="packages/paper_elements/paper_checkbox.html">
 
 <polymer-element name="codelab-app">
   <template>
@@ -16,11 +19,32 @@
 
       <core-header-panel main>
         <core-toolbar>
-          My Notes
-          <paper-icon-button icon="menu"></paper-icon-button>
+          <span flex>My Notes</span>
+          
+          <paper-icon-button icon="menu" on-click="{{toggleDrawer}}"></paper-icon-button>
           <paper-icon-button icon="search"></paper-icon-button>
           <paper-icon-button icon="more-vert"></paper-icon-button>
+          
+          <paper-fab icon="icons:add" on-click="{{showNewNoteInput}}"></paper-fab>
         </core-toolbar>
+        
+        <div class="content">
+          <paper-input id="newNoteInput" floatingLabel label="Add a new note"
+            on-change="{{add}}" value="{{newNote}}">
+          </paper-input>
+          
+          <template repeat="{{item in data}}">
+            <div center horizontal layout class="item" data-done="{{item.done}}">
+              <paper-checkbox checked="{{item.done}}" on-change="{{dataChanged}}">
+              </paper-checkbox>
+              <div flex class="card">
+                <p>{{item.body}}</p>
+                <paper-shadow z="2"></paper-shadow>
+                <paper-ripple class="fit recenteringTouch"></paper-ripple>
+              </div>
+            </div>
+          </template>
+        </div>
 
       </core-header-panel>
     </core-drawer-panel>
